@@ -1,1 +1,8 @@
+[package]
+name = "nemo-orchestrator-app"
+version = "0.1.0"
+edition = "2021"
 
+[dependencies]
+nemo-core = { workspace = true }
+tokio = { workspace = true }
