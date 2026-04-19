@@ -1,1 +1,9 @@
+[package]
+name = "nemo-contracts"
+version = "0.1.0"
+edition = "2021"
 
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+nemo-core = { workspace = true }
