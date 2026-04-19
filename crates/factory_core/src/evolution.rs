@@ -1,29 +1,30 @@
-use crate::planner::Plan;
+use crate::evaluator::EvaluationResult;
 
-pub struct EvaluationResult {
-    pub success: bool,
-    pub log: String,
+pub struct Patch {
+    pub content: String,
 }
 
-pub struct Evaluator;
+pub struct Evolver;
 
-impl Evaluator {
+impl Evolver {
     pub fn new() -> Self {
         Self
     }
 
-    pub fn execute(&self, plan: &Plan) -> EvaluationResult {
-        for task in &plan.tasks {
-            println!("EXEC TASK: {}", task);
+    pub fn generate_patch(&self, result: &EvaluationResult) -> Patch {
+        if result.log.contains("build failed") {
+            return Patch {
+                content: "// fix build pipeline".into(),
+            };
         }
 
-        EvaluationResult {
-            success: false, // simulated CI failure for loop activation
-            log: "build failed".into(),
+        Patch {
+            content: "// generic fix".into(),
         }
     }
 
-    pub fn verify(&self, result: &EvaluationResult) -> bool {
-        result.success
+    pub fn apply_patch(&self, patch: Patch) {
+        println!("APPLY PATCH:\n{}", patch.content);
+        // لاحقاً: fs_engine binding
     }
 }
