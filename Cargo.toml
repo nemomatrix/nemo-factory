@@ -6,6 +6,7 @@ members = [
     "crates/ci_runner",
     "crates/log_analyzer",
     "crates/repair_engine",
+    "crates/dag_compiler",
     "apps/orchestrator",
 ]
 resolver = "2"
@@ -20,3 +21,4 @@ nemo-fs_engine = { path = "crates/fs_engine" }
 nemo-ci_runner = { path = "crates/ci_runner" }
 nemo-log_analyzer = { path = "crates/log_analyzer" }
 nemo-repair_engine = { path = "crates/repair_engine" }
+nemo-dag_compiler = { path = "crates/dag_compiler" }
