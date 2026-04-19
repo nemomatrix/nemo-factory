@@ -1,1 +1,1 @@
-
+log_analyzer = { path = "../log_analyzer" }
