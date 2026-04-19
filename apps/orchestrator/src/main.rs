@@ -1,7 +1,16 @@
+use crate::planner::Planner;
+use crate::factory::Factory;
 
-use core::orchestrator::Orchestrator;
+pub fn run_factory(spec: &str) {
+    let planner = Planner;
+    let mut factory = Factory::new();
 
-fn main() {
-    let mut orchestrator = Orchestrator::new();
-    orchestrator.run();
+    loop {
+        let plan = planner.build_plan(spec);
+
+        factory.run_cycle(plan);
+
+        // stop condition لاحقاً CI success
+        break;
+    }
 }
