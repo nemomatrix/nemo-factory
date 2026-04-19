@@ -8,3 +8,4 @@ pub mod limiter;
 pub mod patch_builder;
 pub mod strategy;
 pub mod healing_loop;
+pub mod evolution_engine;
