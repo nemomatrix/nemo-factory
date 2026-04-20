@@ -7,6 +7,7 @@ members = [
     "crates/log_analyzer",
     "crates/repair_engine",
     "crates/dag_compiler",
+    "crates/cross_intel",
     "apps/orchestrator",
 ]
 resolver = "2"
@@ -15,6 +16,7 @@ resolver = "2"
 tokio = { version = "1.0", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+cross-intel = { path = "crates/cross_intel" }
 nemo-core = { path = "crates/core" }
 nemo-contracts = { path = "crates/contracts" }
 nemo-fs_engine = { path = "crates/fs_engine" }
