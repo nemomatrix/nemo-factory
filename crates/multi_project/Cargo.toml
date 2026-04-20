@@ -1,0 +1,20 @@
+[package]
+name = "nemo-multi_project"
+version = "0.1.0"
+edition = "2021"
+description = "Cross-project knowledge transfer and pattern recognition"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+regex = "1.9"
+dashmap = "5.5"
+
+approx = "0.5"
+
+nemo-core = { path = "../core" }
+nemo-dag_compiler = { path = "../dag_compiler" }
+
+[lib]
+path = "src/lib.rs"
