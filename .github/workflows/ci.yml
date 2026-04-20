@@ -1,0 +1,33 @@
+name: HARDENED-CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-matrix:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        rust: [stable]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build
+        run: cargo build --all
+
+      - name: Run Test Matrix
+        run: cargo run -p testing
+
+      - name: Enforce Failure Gate
+        run: |
+          if grep -q "FAILED" output.log; then
+            exit 1
+          fi
