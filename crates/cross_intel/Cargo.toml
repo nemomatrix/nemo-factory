@@ -1,5 +1,5 @@
 [package]
-name = "cross_intel"
+name = "cross-intel"
 version = "0.1.0"
 edition = "2021"
 
